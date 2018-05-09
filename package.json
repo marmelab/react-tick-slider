@@ -1,0 +1,39 @@
+{
+    "name": "react-tick-slider",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "NODE_ENV=production babel src -d dist",
+        "storybook": "start-storybook -p 9009 -c stories",
+        "build-docs": "build-storybook -c stories -o docs"
+
+    },
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "prop-types": "15.6.1",
+        "react": "16.3.2",
+        "react-dom": "16.3.2"
+    },
+    "devDependencies": {
+        "@storybook/cli": "3.4.3",
+        "@storybook/react": "3.4.3",
+        "babel-cli": "6.26.0",
+        "babel-eslint": "8.2.3",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "babel-plugin-transform-object-rest-spread": "6.26.0",
+        "babel-plugin-transform-react-jsx": "6.24.1",
+        "babel-preset-env": "1.6.1",
+        "eslint": "4.19.1",
+        "eslint-config-prettier": "2.9.0",
+        "eslint-plugin-babel": "5.1.0",
+        "eslint-plugin-import": "2.11.0",
+        "eslint-plugin-prettier": "2.6.0",
+        "eslint-plugin-react": "7.7.0",
+        "prettier": "1.12.1",
+        "prop-type": "^0.0.1",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2"
+    }
+}
