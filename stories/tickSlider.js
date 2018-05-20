@@ -57,7 +57,7 @@ export const BulletPoint = glamorous.span({
 
 storiesOf('TickSlider', module).add('Complete', () => {
   const store = new Store({
-    value: 3,
+    value: 2,
     options: [
       {
         label: 'value 1',
