@@ -25,6 +25,10 @@ const computeStyle = (position, withTransition) => {
   const style = {
     left: `calc(${position}% - ${circleSize / 2}px - 2px)`,
   };
+  if (withTransition) {
+    style.transition = 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+    style.transform = 'translateZ(0)';
+  }
   return style;
 };
 

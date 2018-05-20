@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { State, Store } from '@sambego/storybook-state';
 import classnames from 'classnames';
 import glamorous from 'glamorous';
 
@@ -53,39 +55,69 @@ export const BulletPoint = glamorous.span({
   width: bulletSize,
 });
 
-const values = [{ label: 'label', value: 0 }, { label: 'label1', value: 1 }, { label: 'label2', value: 2 }];
+storiesOf('TickSlider', module).add('Complete', () => {
+  const store = new Store({
+    value: 3,
+    options: [
+      {
+        label: 'value 1',
+        value: 1,
+      },
+      {
+        label: 'value 2',
+        value: 2,
+      },
+      {
+        label: 'value 3',
+        value: 3,
+      },
+    ],
+  });
 
-storiesOf('TickSlider', module).add('TickSlider', () => (
-  <Container>
-    <TickSlider rootStyle={rootStyle} options={values}>
-      {({ handleStart, selectedChoice, handleKeyPress, choices }) => (
-        <Fragment>
-          <Slidebar />
-          <CircleContainer onMouseDown={handleStart} onTouchStart={handleStart}>
-            {choices.map(choice => (
-              <BulletPointContainer
-                key={choice.value}
-                onKeyPress={handleKeyPress(choice)}
-                position={choice.position}
-                width={100 / choices.length}
-              >
-                <BulletPoint
-                  aria-label={choice.label}
-                  aria-pressed={selectedChoice && selectedChoice.value === choice.value}
-                  role="button"
-                  tabIndex={0}
-                  title={choice.label}
+  const handleValueChange = value => {
+    action('Value changed')(value);
+    store.set({ value });
+  };
+
+  return (
+    <State store={store}>
+      <Container>
+        <TickSlider
+          rootStyle={rootStyle}
+          options={store.get('options')}
+          value={store.get('value')}
+          onValueChange={handleValueChange}
+        >
+          {({ handleStart, selectedChoice, handleKeyPress, choices }) => (
+            <Fragment>
+              <Slidebar />
+              <CircleContainer onMouseDown={handleStart} onTouchStart={handleStart}>
+                {choices.map(choice => (
+                  <BulletPointContainer
+                    key={choice.value}
+                    onKeyPress={handleKeyPress(choice)}
+                    position={choice.position}
+                    width={100 / choices.length}
+                  >
+                    <BulletPoint
+                      aria-label={choice.label}
+                      aria-pressed={selectedChoice && selectedChoice.value === choice.value}
+                      role="button"
+                      tabIndex={0}
+                      title={choice.label}
+                    />
+                  </BulletPointContainer>
+                ))}
+                <Circle
+                  className={classnames({ active: selectedChoice })}
+                  position={selectedChoice ? selectedChoice.position : 0}
+                  withTransition
                 />
-              </BulletPointContainer>
-            ))}
-            <Circle
-              className={classnames({ active: selectedChoice })}
-              position={selectedChoice ? selectedChoice.position : 0}
-              withTransition
-            />
-          </CircleContainer>
-        </Fragment>
-      )}
-    </TickSlider>
-  </Container>
-));
+              </CircleContainer>
+            </Fragment>
+          )}
+        </TickSlider>
+      </Container>
+    </State>
+  );
+});

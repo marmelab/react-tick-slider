@@ -7,7 +7,6 @@
         "build": "NODE_ENV=production babel src -d dist",
         "storybook": "start-storybook -p 9009 -c stories",
         "build-docs": "build-storybook -c stories -o docs"
-
     },
     "author": "",
     "license": "ISC",
@@ -17,6 +16,7 @@
         "react-dom": "16.3.2"
     },
     "devDependencies": {
+        "@sambego/storybook-state": "1.0.7",
         "@storybook/cli": "3.4.3",
         "@storybook/react": "3.4.3",
         "babel-cli": "6.26.0",

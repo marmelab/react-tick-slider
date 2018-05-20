@@ -28,6 +28,7 @@ const snapBulletPoint = (choices, circlePosition) =>
 export default class TickSlider extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
+    onValueChange: PropTypes.func,
     rootStyle: PropTypes.object,
     options: PropTypes.arrayOf(
       PropTypes.shape({
@@ -41,6 +42,7 @@ export default class TickSlider extends Component {
   static defaultProps = {
     rootStyle: {},
     options: [],
+    onValueChange: () => {},
     value: null,
   };
 
@@ -97,6 +99,7 @@ export default class TickSlider extends Component {
 
     if (!selectedChoice || selectedChoice.value !== choice.value) {
       this.setState({ selectedChoice: choice });
+      this.props.onValueChange(choice.value);
     }
   };
 
