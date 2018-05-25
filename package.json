@@ -6,7 +6,8 @@
   "scripts": {
     "build": "NODE_ENV=production babel src -d dist",
     "storybook": "start-storybook -p 9009 -c stories",
-    "build-docs": "build-storybook -c stories -o docs"
+    "build-docs": "build-storybook -c stories -o docs",
+    "update-readme": "doctoc README.md"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +26,7 @@
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-plugin-transform-react-jsx": "6.24.1",
     "babel-preset-env": "1.6.1",
+    "doctoc": "1.3.1",
     "eslint": "4.19.1",
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-babel": "5.1.0",
