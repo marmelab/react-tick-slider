@@ -74,6 +74,12 @@ storiesOf('TickSlider', module).add('Complete', () => {
     ],
   });
 
+  const handleKeyPress = (selectChoice, choice) => e => {
+    if (e.key === 'Enter') {
+      selectChoice(choice);
+    }
+  };
+
   const handleValueChange = value => {
     action('Value changed')(value);
     store.set({ value });
@@ -88,14 +94,14 @@ storiesOf('TickSlider', module).add('Complete', () => {
           value={store.get('value')}
           onValueChange={handleValueChange}
         >
-          {({ handleStart, selectedChoice, handleKeyPress, choices }) => (
+          {({ choices, selectedChoice, selectChoice }) => (
             <Fragment>
               <Slidebar />
-              <CircleContainer onMouseDown={handleStart} onTouchStart={handleStart}>
+              <CircleContainer>
                 {choices.map(choice => (
                   <BulletPointContainer
                     key={choice.value}
-                    onKeyPress={handleKeyPress(choice)}
+                    onKeyPress={handleKeyPress(selectChoice, choice)}
                     position={choice.position}
                     width={100 / choices.length}
                   >

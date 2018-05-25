@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const KEY_ENTER = 'Enter';
-
 const computeCirclePosition = (total, position) => 100 / (total - 1) * position;
 
 const computeCirclePositionFromMousePosition = (mouseX, { left, width }) => (mouseX - left) / width * 100;
@@ -136,21 +134,14 @@ export default class TickSlider extends Component {
     this.setState({ isDragging: true });
   };
 
-  handleKeyPress = choice => e => {
-    if (e.key === KEY_ENTER) {
-      this.selectChoice(choice);
-    }
-  };
-
   render() {
     const { choices, selectedChoice } = this.state;
     const { children, rootStyle } = this.props;
 
     return (
-      <div style={rootStyle} ref={this.slidebarElement}>
+      <div style={rootStyle} ref={this.slidebarElement} onMouseDown={this.handleStart} onTouchStart={this.handleStart}>
         {children({
-          handleStart: this.handleStart,
-          handleKeyPress: this.handleKeyPress,
+          selectChoice: this.selectChoice,
           selectedChoice,
           choices,
         })}
