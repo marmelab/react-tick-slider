@@ -6,8 +6,8 @@
   "scripts": {
     "build": "NODE_ENV=production babel src -d dist",
     "storybook": "start-storybook -p 9009 -c stories",
-    "build-docs": "build-storybook -c stories -o docs",
-    "update-readme": "doctoc README.md"
+    "build-storybook": "build-storybook -c stories -o docs",
+    "doc": "doctoc README.md"
   },
   "author": "",
   "license": "ISC",

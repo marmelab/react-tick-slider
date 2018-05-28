@@ -31,6 +31,9 @@ This differs from other solutions which render things for their use case and the
   - [value](#value)
   - [onValueChange](#onvaluechange)
   - [children](#children)
+- [Render Prop Function](#render-prop-function)
+  - [actions](#actions)
+  - [state](#state)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -60,7 +63,7 @@ import TickSlider from 'react-tick-slider'
     value={2} // default tick selected
     onValueChange={handleValueChange}
 >
-    {({ handleStart, selectedChoice, handleKeyPress, choices }) => (
+    {({ choices, selectedChoice, selectChoice }) => (
     <Fragment>
         <div className="slider">
             ...render your slider here
@@ -119,6 +122,30 @@ This return the `value` of the tick selected.
 
 This is calls the render function and renders that.
 
+## Render Prop Function
+
+###  actions
+
+These are functions you can call to change the state of the downshift component.
+
+<!-- This table was generated via http://www.tablesgenerator.com/markdown_tables -->
+
+| property      | type                     | description                                                 |
+|---------------|--------------------------|-------------------------------------------------------------|
+| selectChoice  | function(choice: object) | selects the selectedChoice and trigger onValueChange  event |
+|               |                          |                                                             |
+
+### state
+
+These are values that represent the current state of the tick-slider component.
+
+<!-- This table was generated via http://www.tablesgenerator.com/markdown_tables -->
+| property       | type                                                           | description                            |
+|----------------|----------------------------------------------------------------|----------------------------------------|
+| choices        | object {label: string/number, value: number, position: number} | This is your ticks with multiple props |
+| selectedChoice | object {label: string/number, value: number, position: number} | This is tick selected                  |
+|                |                                                                |                                        |
+
 ## Todo
 
 - [X] Add code tick slider
@@ -126,3 +153,5 @@ This is calls the render function and renders that.
 - [ ] Deploy on NPM
 - [ ] More example
 - [ ] Blog post about "My first component Open source"
+- [ ] Add test
+- [ ] Use with slider only
