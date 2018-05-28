@@ -34,6 +34,7 @@ This differs from other solutions which render things for their use case and the
 - [Render Prop Function](#render-prop-function)
   - [actions](#actions)
   - [state](#state)
+- [Todo](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -146,10 +147,10 @@ These are values that represent the current state of the tick-slider component.
 | selectedChoice | object {label: string/number, value: number, position: number} | This is tick selected                  |
 |                |                                                                |                                        |
 
-## Todo
+## Todo
 
 - [X] Add code tick slider
-- [ ] Documentation
+- [X] Documentation
 - [ ] Deploy on NPM
 - [ ] More example
 - [ ] Blog post about "My first component Open source"
