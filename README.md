@@ -42,7 +42,7 @@ This differs from other solutions which render things for their use case and the
 
 ## Installation
 
-This module is distributed via [npm](soon) which is bundled with [node](https://nodejs.org/en/) and
+This module is distributed via [npm](https://www.npmjs.com/package/react-tick-slider) which is bundled with [node](https://nodejs.org/en/) and
 should be installed as one of your project's `dependencies`:
 
 ```
