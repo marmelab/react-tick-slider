@@ -54,7 +54,7 @@ npm install --save react-tick-slider
 
 ## Usage
 
-> [Try it out in the browser](codesandbox soon)
+> [Try it out in the browser](https://codesandbox.io/s/github/zyhou/react-tick-slider-example/tree/master/)
 
 ```jsx
 import React from 'react'
