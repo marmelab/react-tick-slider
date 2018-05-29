@@ -34,6 +34,8 @@ This differs from other solutions which render things for their use case and the
 - [Render Prop Function](#render-prop-function)
   - [actions](#actions)
   - [state](#state)
+- [Inspiration](#inspiration)
+- [Other Solutions](#other-solutions)
 - [Todo](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -146,6 +148,17 @@ These are values that represent the current state of the tick-slider component.
 | choices        | object {label: string/number, value: number, position: number} | This is your ticks with multiple props |
 | selectedChoice | object {label: string/number, value: number, position: number} | This is tick selected                  |
 |                |                                                                |                                        |
+
+## Inspiration
+
+I was heavily inspired by [Kent C. Dodds](https://github.com/kentcdodds) and this repository [Awesome react render props](https://github.com/jaredpalmer/awesome-react-render-props]).
+
+## Other Solutions
+
+You can implement these other solutions using `tick-slider`, but if you'd prefer
+to use these out of the box solutions, then that's fine too:
+
+* [`react-compound-slider`](https://github.com/sghall/react-compound-slider)
 
 ## Todo
 
