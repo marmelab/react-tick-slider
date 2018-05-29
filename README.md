@@ -164,7 +164,7 @@ to use these out of the box solutions, then that's fine too:
 
 - [X] Add code tick slider
 - [X] Documentation
-- [ ] Deploy on NPM
+- [X] Deploy on NPM
 - [ ] Blog post about "My first component Open source"
 - [ ] More example
 - [ ] Add test (cypress)
