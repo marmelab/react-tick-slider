@@ -1,16 +1,25 @@
 {
   "name": "react-tick-slider",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "author": "Maxime Richard <richard.maxime9@gmail.com>",
+  "description": "A set of primitives to build simple, React tick slider components",
+  "keywords": [
+    "enhanced input",
+    "react",
+    "slider",
+    "tick-slider",
+    "accessibility",
+    "render-props"
+  ],
+  "main": "dist/index.js",
+  "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production babel src -d dist",
     "storybook": "start-storybook -p 9009 -c stories",
     "build-storybook": "build-storybook -c stories -o docs",
     "doc": "doctoc README.md"
   },
-  "author": "",
-  "license": "ISC",
+  "files": ["dist"],
   "peerDependencies": {
     "prop-types": "15.6.1",
     "react": "16.3.2",
@@ -37,5 +46,14 @@
     "prop-types": "15.6.1",
     "react": "16.3.2",
     "react-dom": "16.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marmelab/react-tick-slider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marmelab/react-tick-slider/issues"
+  },
+  "homepage": "https://github.com/marmelab/react-tick-slider#readme",
+  "dependencies": {}
 }

@@ -165,7 +165,8 @@ to use these out of the box solutions, then that's fine too:
 - [X] Add code tick slider
 - [X] Documentation
 - [ ] Deploy on NPM
-- [ ] More example
 - [ ] Blog post about "My first component Open source"
-- [ ] Add test
-- [ ] Use with slider only
+- [ ] More example
+- [ ] Add test (cypress)
+- [ ] Add typings
+- [ ] Use like slider (without tick)
