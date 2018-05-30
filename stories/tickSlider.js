@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { State, Store } from '@sambego/storybook-state';
-import classnames from 'classnames';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 
 import TickSlider from '../src';
 import { Circle, Slidebar } from './components';
@@ -18,42 +17,37 @@ const rootStyle = {
   width: '100%',
 };
 
-const Container = glamorous.div({
-  padding: '0 20px',
-  height: '100%',
-});
+const Container = styled('div')`
+  padding: 0 20px;
+  height: 100%;
+  width: 500px;
+`;
 
-const CircleContainer = glamorous.div({
-  height: '100%',
-  left: 0,
-  position: 'absolute',
-  top: 0,
-  width: '100%',
-});
+const CircleContainer = styled('div')`
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+`;
 
-const BulletPointContainer = glamorous.div(
-  {
-    alignItems: 'center',
-    display: 'flex',
-    height: '100%',
-    justifyContent: 'center',
-    position: 'absolute',
-  },
-  ({ position, width }) => ({
-    width: `${width}%`,
-    left: `calc(${position}% - ${width / 2}%)`,
-  }),
-);
+const BulletPointContainer = styled('div')`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: ${({ width }) => `${width}%`};
+  left: ${({ position, width }) => `calc(${position}% - ${width / 2}%)`};
+`;
 
-const bulletSize = 10;
-
-export const BulletPoint = glamorous.span({
-  backgroundColor: 'grey',
-  borderRadius: '50%',
-  height: bulletSize,
-  outline: 'none',
-  width: bulletSize,
-});
+const BulletPoint = styled('span')`
+  background-color: grey;
+  border-radius: 50%;
+  outline: none;
+  height: ${({ bulletSize }) => `${bulletSize}px`};
+  width: ${({ bulletSize }) => `${bulletSize}px`};
+`;
 
 storiesOf('TickSlider', module).add('Complete', () => {
   const store = new Store({
@@ -111,11 +105,12 @@ storiesOf('TickSlider', module).add('Complete', () => {
                       role="button"
                       tabIndex={0}
                       title={choice.label}
+                      bulletSize={10}
                     />
                   </BulletPointContainer>
                 ))}
                 <Circle
-                  className={classnames({ active: selectedChoice })}
+                  active={selectedChoice !== undefined}
                   position={selectedChoice ? selectedChoice.position : 0}
                   withTransition
                 />

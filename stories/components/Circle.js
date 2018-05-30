@@ -1,27 +1,21 @@
 import React from 'react';
-import glamorous from 'glamorous';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
 
-const circleSize = 20;
-const circleBorderSize = 2;
+const InnerCircle = styled('div')`
+  label: circle;
+  background-color: ${({ active }) => (active ? `yellow` : `black`)};
+  border: ${({ circleBorderSize }) => `solid ${circleBorderSize}px ${'yellow'}`};
+  border-radius: 50%;
+  top: ${({ circleSize }) => `calc(50% - ${circleSize / 2}px)`};
+  max-height: ${({ circleSize }) => `${circleSize}px`};
+  max-width: ${({ circleSize }) => `${circleSize}px`};
+  height: ${({ circleSize }) => `${circleSize}px`};
+  width: ${({ circleSize }) => `${circleSize}px`};
+  position: absolute;
+`;
 
-const InnerCircle = glamorous.span({
-  label: 'circle',
-  backgroundColor: 'black',
-  border: `solid ${circleBorderSize}px ${'yellow'}`,
-  borderRadius: '50%',
-  top: `calc(50% - ${circleSize / 2}px)`,
-  maxHeight: circleSize,
-  maxWidth: circleSize,
-  position: 'absolute',
-  height: circleSize,
-  width: circleSize,
-  '.active': {
-    backgroundColor: 'yellow',
-  },
-});
-
-const computeStyle = (position, withTransition) => {
+const computeStyle = (circleSize, position, withTransition) => {
   const style = {
     left: `calc(${position}% - ${circleSize / 2}px - 2px)`,
   };
@@ -32,18 +26,23 @@ const computeStyle = (position, withTransition) => {
   return style;
 };
 
-const Circle = ({ position, withTransition, className }) => (
-  <InnerCircle className={className} style={computeStyle(position, withTransition)} />
+const Circle = ({ position, withTransition, active }) => (
+  <InnerCircle
+    active={active}
+    style={computeStyle(20, position, withTransition)}
+    circleSize={20}
+    circleBorderSize={2}
+  />
 );
 
 Circle.propTypes = {
-  className: PropTypes.string,
+  active: PropTypes.bool,
   position: PropTypes.number,
   withTransition: PropTypes.bool,
 };
 
 Circle.defaultProps = {
-  className: '',
+  active: false,
   position: 0,
   withTransition: false,
 };
