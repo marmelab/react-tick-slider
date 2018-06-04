@@ -36,7 +36,7 @@ This differs from other solutions which render things for their use case and the
   - [state](#state)
 - [Inspiration](#inspiration)
 - [Other Solutions](#other-solutions)
-- [Todo](#todo)
+- [LICENSE](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -160,13 +160,6 @@ to use these out of the box solutions, then that's fine too:
 
 * [`react-compound-slider`](https://github.com/sghall/react-compound-slider)
 
-## Todo
+## LICENSE
 
-- [X] Add code tick slider
-- [X] Documentation
-- [X] Deploy on NPM
-- [ ] Blog post about "My first component Open source"
-- [ ] More example
-- [ ] Add test (cypress)
-- [ ] Add typings
-- [ ] Use like slider (without tick)
+MIT
