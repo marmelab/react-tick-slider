@@ -1,8 +1,9 @@
 {
-    "printWidth": 120,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
     "singleQuote": true,
     "trailingComma": "all",
-    "parser": "babylon",
-    "semi": true,
-    "jsxBracketSameLine": false
+    "jsxBracketSameLine": false,
+    "proseWrap": "always"
 }
