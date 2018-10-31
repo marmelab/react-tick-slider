@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const computeCirclePosition = (total, position) => 100 / (total - 1) * position;
+const computeCirclePosition = (total, position) =>
+  (100 / (total - 1)) * position;
 
-const computeCirclePositionFromMousePosition = (mouseX, { left, width }) => (mouseX - left) / width * 100;
+const computeCirclePositionFromMousePosition = (mouseX, { left, width }) =>
+  ((mouseX - left) / width) * 100;
 
 const computeChoicesFromOptions = options =>
   options.map(({ label, value }, index) => ({
@@ -12,7 +14,8 @@ const computeChoicesFromOptions = options =>
     value,
   }));
 
-const findChoiceByValue = (choices, value) => choices.find(choice => choice.value === value);
+const findChoiceByValue = (choices, value) =>
+  choices.find(choice => choice.value === value);
 
 const snapBulletPoint = (choices, circlePosition) =>
   choices.reduce(
@@ -59,8 +62,12 @@ export default class TickSlider extends Component {
   }
 
   componentWillReceiveProps({ options, value }) {
-    const newChoices = options ? computeChoicesFromOptions(options) : this.state.choices;
-    const newChoice = value ? findChoiceByValue(newChoices, value) : this.state.selectedChoice;
+    const newChoices = options
+      ? computeChoicesFromOptions(options)
+      : this.state.choices;
+    const newChoice = value
+      ? findChoiceByValue(newChoices, value)
+      : this.state.selectedChoice;
 
     this.setState({
       choices: newChoices,
@@ -109,7 +116,10 @@ export default class TickSlider extends Component {
     }
 
     const slidebar = this.slidebarElement.current.getBoundingClientRect();
-    const circlePosition = computeCirclePositionFromMousePosition(e.pageX || e.changedTouches[0].pageX, slidebar);
+    const circlePosition = computeCirclePositionFromMousePosition(
+      e.pageX || e.changedTouches[0].pageX,
+      slidebar,
+    );
     const snappedBulletPoint = snapBulletPoint(choices, circlePosition);
 
     this.selectChoice(snappedBulletPoint.choice);
@@ -124,7 +134,10 @@ export default class TickSlider extends Component {
     }
 
     const slidebar = this.slidebarElement.current.getBoundingClientRect();
-    const circlePosition = computeCirclePositionFromMousePosition(e.pageX || e.changedTouches[0].pageX, slidebar);
+    const circlePosition = computeCirclePositionFromMousePosition(
+      e.pageX || e.changedTouches[0].pageX,
+      slidebar,
+    );
     const snappedBulletPoint = snapBulletPoint(choices, circlePosition);
 
     this.selectChoice(snappedBulletPoint.choice);
@@ -139,7 +152,12 @@ export default class TickSlider extends Component {
     const { children, rootStyle } = this.props;
 
     return (
-      <div style={rootStyle} ref={this.slidebarElement} onMouseDown={this.handleStart} onTouchStart={this.handleStart}>
+      <div
+        style={rootStyle}
+        ref={this.slidebarElement}
+        onMouseDown={this.handleStart}
+        onTouchStart={this.handleStart}
+      >
         {children({
           selectChoice: this.selectChoice,
           selectedChoice,
