@@ -1,6 +1,6 @@
 {
   "name": "react-tick-slider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Maxime Richard <richard.maxime9@gmail.com>",
   "description": "A set of primitives to build simple, React tick slider components",
   "keywords": [
