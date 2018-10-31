@@ -101,7 +101,9 @@ storiesOf('TickSlider', module).add('Complete', () => {
                   >
                     <BulletPoint
                       aria-label={choice.label}
-                      aria-pressed={selectedChoice && selectedChoice.value === choice.value}
+                      aria-pressed={
+                        selectedChoice && selectedChoice.value === choice.value
+                      }
                       role="button"
                       tabIndex={0}
                       title={choice.label}

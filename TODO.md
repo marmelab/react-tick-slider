@@ -1,8 +1,8 @@
 ## Todo
 
-- [X] Add code tick slider
-- [X] Documentation
-- [X] Deploy on NPM
+- [x] Add code tick slider
+- [x] Documentation
+- [x] Deploy on NPM
 - [ ] Blog post about "My first component Open source"
 - [ ] More example
 - [ ] Add test (cypress)

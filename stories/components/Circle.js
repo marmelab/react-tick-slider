@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const InnerCircle = styled('div')`
   label: circle;
   background-color: ${({ active }) => (active ? `yellow` : `black`)};
-  border: ${({ circleBorderSize }) => `solid ${circleBorderSize}px ${'yellow'}`};
+  border: ${({ circleBorderSize }) =>
+    `solid ${circleBorderSize}px ${'yellow'}`};
   border-radius: 50%;
   top: ${({ circleSize }) => `calc(50% - ${circleSize / 2}px)`};
   max-height: ${({ circleSize }) => `${circleSize}px`};
