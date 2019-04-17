@@ -1,9 +1,3 @@
-<h1 align="center">
-  TickSlider
-  <br>
-</h1>
-<p align="center" style="font-size: 1.2rem;">Primitives to build simple React tick slider components</p>
-
 <table>
         <tr>
             <td><img width="60" src="https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/beaker.svg" alt="hackday" /></td>
@@ -13,6 +7,12 @@
         </td>
         </tr>
 </table>
+
+<h1 align="center">
+  TickSlider
+  <br>
+</h1>
+<p align="center" style="font-size: 1.2rem;">Primitives to build simple React tick slider components</p>
 
 <hr />
 
